@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Library Management System</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>📚 Library Management System</h1>
+  <p>Admin Dashboard</p>
+</header>
+
+<nav class="navbar">
+  <button onclick="showSection('dashboard')"><i class="fas fa-home"></i> Dashboard</button>
+  <button onclick="showSection('books')"><i class="fas fa-book"></i> Books</button>
+  <button onclick="showSection('members')"><i class="fas fa-users"></i> Members</button>
+  <button onclick="showSection('issue')"><i class="fas fa-hand-paper"></i> Issue</button>
+  <button onclick="showSection('return')"><i class="fas fa-undo"></i> Return</button>
+  <button onclick="showSection('issued')"><i class="fas fa-list"></i> Issued</button>
+</nav>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="section active">
+  <h2>Welcome Admin 👋</h2>
+  <p>Select an option from the menu</p>
+
+  <div class="cards">
+    <div class="card">📘 Books</div>
+    <div class="card">👥 Members</div>
+    <div class="card">📦 Issue</div>
+    <div class="card">🔁 Return</div>
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section id="books" class="section">
+  <h2>Add Book</h2>
+  <form>
+    <input type="text" placeholder="Title">
+    <input type="text" placeholder="Author">
+    <input type="number" placeholder="Price">
+    <button>Add Book</button>
+  </form>
+</section>
+
+<!-- MEMBERS -->
+<section id="members" class="section">
+  <h2>Register Member</h2>
+  <form>
+    <input type="text" placeholder="Name">
+    <input type="text" placeholder="Address">
+    <button>Register</button>
+  </form>
+</section>
+
+<!-- ISSUE -->
+<section id="issue" class="section">
+  <h2>Issue Book</h2>
+  <form>
+    <select><option>Select Book</option></select>
+    <select><option>Select Member</option></select>
+    <input type="date">
+    <input type="date">
+    <button>Issue</button>
+  </form>
+</section>
+
+<!-- RETURN -->
+<section id="return" class="section">
+  <h2>Return Book</h2>
+  <form>
+    <select><option>Select Issued Book</option></select>
+    <button>Return</button>
+  </form>
+</section>
+
+<!-- ISSUED -->
+<section id="issued" class="section">
+  <h2>Issued Books</h2>
+  <table>
+    <tr>
+      <th>ID</th><th>Book</th><th>Member</th><th>Issue</th><th>Return</th>
+    </tr>
+    <tr>
+      <td>1</td><td>PHP Book</td><td>Rahim</td><td>2025-01-01</td><td>2025-01-10</td>
+    </tr>
+  </table>
+</section>
+
+<footer>
+  © 2025 Library Management System
+</footer>
+
+<script>
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
